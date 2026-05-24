@@ -1,3 +1,4 @@
+// Section heading with optional "See all" link.
 import { StyleSheet, Text, View } from 'react-native';
 import { colors, spacing } from '../constants/theme';
 

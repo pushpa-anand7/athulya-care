@@ -1,3 +1,4 @@
+// Home screen — greeting, search, wellbeing, quick actions, and shortcuts.
 import { Ionicons } from '@expo/vector-icons';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { CompositeNavigationProp } from '@react-navigation/native';
@@ -44,6 +45,7 @@ export function DashboardScreen({ navigation }: Props) {
   const insets = useSafeAreaInsets();
   const { colors, minTouchSize } = useTheme();
   const upcomingDoctor = getDoctorById('dr-arjun');
+  // Parent navigator can open Profile (not in bottom tabs).
   const rootNav = navigation.getParent();
   const firstName = PATIENT_NAME.split(' ')[0];
 

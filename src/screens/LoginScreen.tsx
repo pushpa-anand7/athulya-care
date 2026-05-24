@@ -1,3 +1,4 @@
+// Login screen — demo user can sign in and see success popup.
 import { CommonActions } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useState } from 'react';
@@ -17,6 +18,7 @@ import { AuthStackParamList } from '../types/navigation';
 
 type Props = NativeStackScreenProps<AuthStackParamList, 'Login'>;
 
+// Demo login only — change these for real backend later.
 const DEMO_EMAIL = 'demo@athulya.com';
 const DEMO_PASSWORD = '123456';
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

@@ -1,3 +1,4 @@
+// Shows step 1, 2, 3 dots during doctor booking flow.
 import { StyleSheet, View } from 'react-native';
 import { AppText } from './AppText';
 import { colors, radius, spacing } from '../constants/theme';

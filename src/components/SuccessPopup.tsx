@@ -1,3 +1,4 @@
+// Green check popup used after login and after booking an appointment.
 import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 import { colors, spacing } from '../constants/theme';
 

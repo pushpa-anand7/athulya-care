@@ -1,8 +1,10 @@
+// Shared layout for login and welcome — logo on top, form below.
 import { ReactNode } from 'react';
 import {
   Image,
   ImageStyle,
   ImageSourcePropType,
+  KeyboardAvoidingView,
   Platform,
   ScrollView,
   StyleSheet,
@@ -82,19 +84,24 @@ export function AuthLayout({
         </View>
       </View>
 
-      {/* White form area starts after the curved image separation. */}
-      <View style={styles.cardSection}>
+      {/* White form area — moves up when keyboard opens so inputs stay visible. */}
+      <KeyboardAvoidingView
+        style={styles.cardSection}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 24}
+      >
         <ScrollView
           style={styles.scroll}
           contentContainerStyle={styles.scrollContent}
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled"
+          automaticallyAdjustKeyboardInsets
         >
           <Text style={styles.title}>{title}</Text>
           {subtitle ? <Text style={styles.subtitle}>{subtitle}</Text> : null}
           <View style={styles.children}>{children}</View>
         </ScrollView>
-      </View>
+      </KeyboardAvoidingView>
     </View>
   );
 }
@@ -171,7 +178,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     paddingHorizontal: spacing.md,
     paddingTop: spacing.md,
-    paddingBottom: spacing.lg,
+    paddingBottom: spacing.xl * 2,
   },
   title: {
     fontSize: 24,

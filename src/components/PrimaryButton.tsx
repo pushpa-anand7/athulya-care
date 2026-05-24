@@ -1,3 +1,4 @@
+// Main blue button used across the app.
 import { Ionicons } from '@expo/vector-icons';
 import {
   Pressable,

@@ -1,3 +1,4 @@
+// Teal/green gradient card at top of Book Appointment and Support screens.
 import { LinearGradient } from 'expo-linear-gradient';
 import { ReactNode } from 'react';
 import { StyleSheet, Text, View, ViewStyle } from 'react-native';

@@ -1,3 +1,5 @@
+// Fake data for the app — doctors, visits, reports, and support.
+// Replace with real API calls when backend is ready.
 import {
   Appointment,
   Doctor,
@@ -8,6 +10,7 @@ import {
   TimeSlot,
 } from '../types/models';
 
+// Same hospital info for most doctors in the list.
 const doctorDefaults = {
   hospital: 'Athulya Healthcare',
   languages: ['Tamil', 'English'],
@@ -357,6 +360,7 @@ export function getAppointmentById(id: string): Appointment | undefined {
   return appointments.find((a) => a.id === id);
 }
 
+// Adds a new visit to the list (used after patient confirms booking).
 export function createAppointment(
   doctorId: string,
   date: string,

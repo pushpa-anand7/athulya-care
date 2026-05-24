@@ -1,3 +1,4 @@
+// Big card on home for the next upcoming visit.
 import { Ionicons } from '@expo/vector-icons';
 import { useEffect, useRef } from 'react';
 import { Animated, Image, Pressable, StyleSheet, View } from 'react-native';

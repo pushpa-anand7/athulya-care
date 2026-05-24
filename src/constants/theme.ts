@@ -1,10 +1,11 @@
+// Colors, spacing, and text styles shared by many screens.
 import { TextStyle, ViewStyle } from 'react-native';
 import { lightPalette } from './colorPalettes';
 
-/** @deprecated Prefer useTheme().colors — kept for gradual migration */
+// Old color object — new code should use useTheme().colors instead.
 export const colors = lightPalette;
 
-/** Teal → forest green hero cards (book appointment, support) */
+// Green gradient used on hero cards (book appointment, support).
 export const heroGradient = ['#00BFA5', '#004D40'] as const;
 
 export const spacing = {

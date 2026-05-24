@@ -1,3 +1,4 @@
+// App logo screen shown for a few seconds on launch.
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useEffect, useRef } from 'react';
 import { Animated, Image, StyleSheet, View } from 'react-native';

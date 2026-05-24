@@ -1,3 +1,5 @@
+// Light and dark color sets for ThemeContext.
+
 export type ColorPalette = {
   primary: string;
   primaryDark: string;

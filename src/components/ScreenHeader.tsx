@@ -1,3 +1,4 @@
+// Top bar with back arrow and screen title.
 import { Ionicons } from '@expo/vector-icons';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { AppText } from './AppText';

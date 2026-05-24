@@ -1,3 +1,4 @@
+// Small square button for quick actions on home (e.g. book visit).
 import { Ionicons } from '@expo/vector-icons';
 import { Pressable, StyleSheet, Text } from 'react-native';
 import { colors, radius, spacing } from '../constants/theme';

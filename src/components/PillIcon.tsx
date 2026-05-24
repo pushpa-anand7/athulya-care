@@ -1,3 +1,4 @@
+// Small capsule icon for medicine reminder on the home screen.
 import { StyleSheet, View } from 'react-native';
 import { useTheme } from '../context/ThemeContext';
 

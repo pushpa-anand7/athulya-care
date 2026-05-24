@@ -1,3 +1,4 @@
+// Consult tab home — shows active visit, notes, and buttons for video/chat.
 import { Ionicons } from '@expo/vector-icons';
 import { CompositeScreenProps } from '@react-navigation/native';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
@@ -26,6 +27,7 @@ type Props = CompositeScreenProps<
 
 export function ConsultHomeScreen({ navigation, route }: Props) {
   const insets = useSafeAreaInsets();
+  // Use appointment from link, or pick the first upcoming one.
   const appointmentId =
     route.params?.appointmentId ??
     appointments.find((a) => a.status === 'upcoming')?.id;

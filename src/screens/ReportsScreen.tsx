@@ -1,3 +1,4 @@
+// Reports tab — hospital uploads prescriptions and lab reports (read only).
 import { Ionicons } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';

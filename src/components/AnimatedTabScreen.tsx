@@ -1,3 +1,4 @@
+// Small fade/slide animation when a tab screen opens.
 import { useFocusEffect } from '@react-navigation/native';
 import { ReactNode, useCallback, useRef } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';

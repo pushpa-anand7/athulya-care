@@ -1,3 +1,4 @@
+// Visits tab — week calendar and list of booked appointments.
 import { Ionicons } from '@expo/vector-icons';
 import { CompositeScreenProps } from '@react-navigation/native';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';

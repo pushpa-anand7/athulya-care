@@ -1,3 +1,4 @@
+// Custom bottom menu with blue bar and white pill on the active tab.
 import { Ionicons } from '@expo/vector-icons';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { Pressable, StyleSheet, View } from 'react-native';
@@ -6,6 +7,7 @@ import { AppText } from './AppText';
 import { useTheme } from '../context/ThemeContext';
 import { radius, shadows, spacing } from '../constants/theme';
 
+// These screens belong to the Consult tab (keeps Consult tab highlighted).
 const consultRoutes = new Set([
   'ConsultHome',
   'BookAppointment',
@@ -16,6 +18,7 @@ const consultRoutes = new Set([
   'CallEnded',
 ]);
 
+// Hide bottom menu during full-screen video call.
 const hideTabBarRoutes = new Set(['VideoConsultation', 'CallEnded']);
 
 const tabs: {

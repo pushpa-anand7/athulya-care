@@ -1,3 +1,4 @@
+// Screen slide/fade animations used in the navigators.
 import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
 
 export const fadeTransition: NativeStackNavigationOptions = {

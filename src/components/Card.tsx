@@ -1,3 +1,4 @@
+// White rounded box used as a container on many screens.
 import { Pressable, StyleSheet, View, ViewStyle } from 'react-native';
 import { radius, shadows, spacing } from '../constants/theme';
 import { useTheme } from '../context/ThemeContext';

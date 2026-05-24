@@ -1,3 +1,4 @@
+// Grid of time buttons — green = free, grey = taken.
 import { useRef } from 'react';
 import {
   Animated,

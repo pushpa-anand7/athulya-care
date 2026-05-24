@@ -1,3 +1,4 @@
+// This file wires all screens together (login → home → tabs → profile).
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -44,6 +45,7 @@ const AppointmentsStack =
 const ConsultStack = createNativeStackNavigator<ConsultStackParamList>();
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
+// Login, welcome, and splash screens.
 function AuthNavigator() {
   return (
     <AuthStack.Navigator
@@ -72,6 +74,7 @@ function AuthNavigator() {
   );
 }
 
+// Visits tab — calendar and appointment list.
 function AppointmentsNavigator() {
   return (
     <AppointmentsStack.Navigator
@@ -95,6 +98,7 @@ function AppointmentsNavigator() {
   );
 }
 
+// Consult tab — book doctor, see notes, start video call.
 function ConsultNavigator() {
   return (
     <ConsultStack.Navigator
@@ -147,6 +151,7 @@ function ConsultNavigator() {
 const SupportStack = createNativeStackNavigator<SupportStackParamList>();
 const ReportsStack = createNativeStackNavigator<ReportsStackParamList>();
 
+// Help and support tickets.
 function SupportNavigator() {
   return (
     <SupportStack.Navigator
@@ -167,6 +172,7 @@ function SupportNavigator() {
   );
 }
 
+// Prescriptions and lab reports from the hospital.
 function ReportsNavigator() {
   return (
     <ReportsStack.Navigator
@@ -195,6 +201,7 @@ function ReportsNavigator() {
   );
 }
 
+// Bottom menu: Home, Visits, Consult, Reports, Support.
 function MainTabs() {
   return (
     <Tab.Navigator

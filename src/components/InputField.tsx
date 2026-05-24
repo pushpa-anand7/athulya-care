@@ -1,3 +1,4 @@
+// Label + text box for login and forms.
 import {
   StyleSheet,
   Text,

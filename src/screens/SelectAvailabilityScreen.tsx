@@ -1,3 +1,4 @@
+// Step 3 of booking — pick date, time, notes, then show success popup.
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useState } from 'react';
 import { Alert, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -40,6 +41,7 @@ export function SelectAvailabilityScreen({ navigation, route }: Props) {
     return null;
   }
 
+  // Open form to type consultation notes before final booking.
   const handleBookPress = () => {
     if (!selectedSlot) return;
     setModalVisible(true);
@@ -61,6 +63,7 @@ export function SelectAvailabilityScreen({ navigation, route }: Props) {
     setPriorPrescriptionFile('Prior_Prescription.pdf');
   };
 
+  // Save appointment in mock data, then show success popup (same style as login).
   const handleConfirmBooking = () => {
     if (!selectedSlot || !patientNotes.trim()) return;
     const appointment = createAppointment(

@@ -1,3 +1,4 @@
+// Full list of prescriptions or lab reports grouped by month.
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { SectionList, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

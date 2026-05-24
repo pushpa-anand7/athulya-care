@@ -1,3 +1,4 @@
+// Profile and settings — opened from gear icon on home (not in bottom menu).
 import { Ionicons } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Pressable, ScrollView, StyleSheet, Switch, View } from 'react-native';

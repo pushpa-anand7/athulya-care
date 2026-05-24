@@ -1,3 +1,5 @@
+// Data shapes used across the app (doctor, visit, report, etc.).
+
 export type Specialty = {
   id: string;
   icon: string;
@@ -33,11 +35,11 @@ export type Appointment = {
   date: string;
   time: string;
   status: 'upcoming' | 'completed';
-  /** Notes entered by patient when booking */
+  // What the patient typed when booking
   patientNotes?: string;
-  /** Optional prescription uploaded by patient before visit */
+  // Old prescription file name (mock upload)
   priorPrescriptionFile?: string;
-  /** Doctor visit summary after consultation */
+  // Doctor notes after the visit
   notes?: string;
   /** Prescription issued by hospital after visit */
   prescriptionFile?: string;

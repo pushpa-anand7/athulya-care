@@ -1,3 +1,4 @@
+// AI chat screen — opened from the floating + button on home.
 import { Ionicons } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useState } from 'react';

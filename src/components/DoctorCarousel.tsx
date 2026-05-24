@@ -1,3 +1,4 @@
+// Horizontal scroll of doctor cards on the home screen.
 import { Ionicons } from '@expo/vector-icons';
 import { Image, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { images } from '../constants/images';

@@ -1,3 +1,4 @@
+// Text that respects font size and dark mode from settings.
 import { StyleSheet, Text, TextProps } from 'react-native';
 import { typography } from '../constants/theme';
 import { useTheme } from '../context/ThemeContext';

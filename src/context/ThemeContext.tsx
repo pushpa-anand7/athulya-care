@@ -1,3 +1,4 @@
+// Saves and loads user settings: dark mode, text size, and language.
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   createContext,
@@ -8,7 +9,6 @@ import {
   useMemo,
   useState,
 } from 'react';
-import { useColorScheme } from 'react-native';
 import {
   ColorPalette,
   darkPalette,
@@ -36,11 +36,12 @@ type ThemeContextValue = {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
+// Key used to store settings on the phone.
 const STORAGE_KEY = '@athulya_theme_prefs';
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const systemScheme = useColorScheme();
-  const [isDark, setIsDark] = useState(systemScheme === 'dark');
+  // Always start in light mode; user can turn on dark mode in Profile.
+  const [isDark, setIsDark] = useState(false);
   const [highContrast, setHighContrast] = useState(false);
   const [fontScale, setFontScale] = useState(1);
   const [language, setLanguage] = useState<LanguageCode>('en');

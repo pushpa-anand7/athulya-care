@@ -1,3 +1,4 @@
+// Doctor info card — used in doctor list, consult page, and booking steps.
 import { Ionicons } from '@expo/vector-icons';
 import { Image, Pressable, StyleSheet, View } from 'react-native';
 import { images } from '../constants/images';
@@ -7,9 +8,9 @@ import { AppText } from './AppText';
 
 export type DoctorCardProps = {
   doctor: Doctor;
-  /** List row — tappable with Book now. Detail — static profile block. */
+  // list = show Book now button, detail = full card with follow button
   variant?: 'list' | 'detail';
-  /** Shorter card — name, specialty, rating only */
+  // compact = smaller card for the schedule screen
   compact?: boolean;
   onPress?: () => void;
   onBook?: () => void;

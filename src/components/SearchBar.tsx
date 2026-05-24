@@ -1,3 +1,4 @@
+// Search box on home screen with mic and scan icons.
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, TextInput, View, ViewStyle } from 'react-native';
 import { colors, radius, spacing } from '../constants/theme';

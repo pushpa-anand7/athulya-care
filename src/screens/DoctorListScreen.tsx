@@ -1,3 +1,4 @@
+// Step 2 of booking — list of doctors for the chosen specialty.
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useMemo, useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';

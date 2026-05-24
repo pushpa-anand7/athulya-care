@@ -1,3 +1,4 @@
+// Full-screen video call UI — doctor video, self view, and call controls.
 import { Ionicons } from '@expo/vector-icons';
 import { BlurView } from 'expo-blur';
 import { LinearGradient } from 'expo-linear-gradient';

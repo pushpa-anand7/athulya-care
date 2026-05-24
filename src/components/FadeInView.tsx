@@ -1,3 +1,4 @@
+// Fades content in when screen loads.
 import { ReactNode, useEffect, useRef } from 'react';
 import { Animated, ViewStyle } from 'react-native';
 

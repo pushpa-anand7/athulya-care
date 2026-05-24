@@ -1,3 +1,4 @@
+// One report file — shows doctor name, date, and download button (mock).
 import { Ionicons } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { ScrollView, StyleSheet, View } from 'react-native';

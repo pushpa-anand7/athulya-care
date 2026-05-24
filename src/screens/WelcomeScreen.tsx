@@ -1,3 +1,4 @@
+// First screen after splash — intro text and button to go to login.
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { StyleSheet, View } from 'react-native';
 import { AuthLayout } from '../components/AuthLayout';

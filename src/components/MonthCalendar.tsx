@@ -1,3 +1,4 @@
+// Calendar grid for picking a day when booking — cell size fits screen width.
 import { Ionicons } from '@expo/vector-icons';
 import { useMemo } from 'react';
 import {

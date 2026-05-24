@@ -1,13 +1,16 @@
+// Form shown before booking: patient writes notes and can attach old prescription.
 import { Ionicons } from '@expo/vector-icons';
 import {
   KeyboardAvoidingView,
   Modal,
   Platform,
   Pressable,
+  ScrollView,
   StyleSheet,
   TextInput,
   View,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AppText } from './AppText';
 import { colors, radius, spacing } from '../constants/theme';
 
@@ -30,79 +33,89 @@ export function BookConsultationModal({
   onConfirm,
   onClose,
 }: Props) {
+  const insets = useSafeAreaInsets();
+
   return (
     <Modal visible={visible} transparent animationType="fade" onRequestClose={onClose}>
       <KeyboardAvoidingView
         style={styles.overlay}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? insets.bottom : 0}
       >
         <Pressable style={styles.backdrop} onPress={onClose} />
-        <View style={styles.sheet}>
-          <AppText variant="h2" style={styles.title}>
-            Before your visit
-          </AppText>
-          <AppText variant="caption" muted style={styles.subtitle}>
-            Share notes for the doctor. Upload a previous prescription if you have one
-            (optional).
-          </AppText>
+        <ScrollView
+          keyboardShouldPersistTaps="handled"
+          automaticallyAdjustKeyboardInsets
+          contentContainerStyle={styles.scrollContent}
+          bounces={false}
+        >
+          <View style={[styles.sheet, { paddingBottom: spacing.xl + insets.bottom }]}>
+            <AppText variant="h2" style={styles.title}>
+              Before your visit
+            </AppText>
+            <AppText variant="caption" muted style={styles.subtitle}>
+              Share notes for the doctor. Upload a previous prescription if you have one
+              (optional).
+            </AppText>
 
-          <AppText variant="label" style={styles.label}>
-            Consultation notes
-          </AppText>
-          <TextInput
-            style={styles.input}
-            placeholder="Describe symptoms, concerns, or questions..."
-            placeholderTextColor={colors.textLight}
-            multiline
-            value={notes}
-            onChangeText={onChangeNotes}
-          />
-
-          <AppText variant="label" style={styles.label}>
-            Previous prescription (optional)
-          </AppText>
-          <Pressable style={styles.uploadRow} onPress={onPickPrescription}>
-            <Ionicons
-              name={prescriptionFile ? 'document-text' : 'cloud-upload-outline'}
-              size={22}
-              color={colors.primary}
+            <AppText variant="label" style={styles.label}>
+              Consultation notes
+            </AppText>
+            <TextInput
+              style={styles.input}
+              placeholder="Describe symptoms, concerns, or questions..."
+              placeholderTextColor={colors.textLight}
+              multiline
+              value={notes}
+              onChangeText={onChangeNotes}
             />
-            <View style={styles.uploadText}>
-              <AppText variant="bodyMedium" color={colors.primary}>
-                {prescriptionFile ? prescriptionFile : 'Upload prescription'}
-              </AppText>
-              {!prescriptionFile ? (
-                <AppText variant="caption" muted>
-                  PDF or image · optional
+
+            <AppText variant="label" style={styles.label}>
+              Previous prescription (optional)
+            </AppText>
+            <Pressable style={styles.uploadRow} onPress={onPickPrescription}>
+              <Ionicons
+                name={prescriptionFile ? 'document-text' : 'cloud-upload-outline'}
+                size={22}
+                color={colors.primary}
+              />
+              <View style={styles.uploadText}>
+                <AppText variant="bodyMedium" color={colors.primary}>
+                  {prescriptionFile ? prescriptionFile : 'Upload prescription'}
                 </AppText>
+                {!prescriptionFile ? (
+                  <AppText variant="caption" muted>
+                    PDF or image · optional
+                  </AppText>
+                ) : null}
+              </View>
+              {prescriptionFile ? (
+                <Pressable onPress={onPickPrescription} hitSlop={8}>
+                  <AppText variant="caption" color={colors.textMuted}>
+                    Change
+                  </AppText>
+                </Pressable>
               ) : null}
-            </View>
-            {prescriptionFile ? (
-              <Pressable onPress={onPickPrescription} hitSlop={8}>
-                <AppText variant="caption" color={colors.textMuted}>
-                  Change
+            </Pressable>
+
+            <View style={styles.actions}>
+              <Pressable style={styles.cancelBtn} onPress={onClose}>
+                <AppText variant="bodyMedium" muted>
+                  Cancel
                 </AppText>
               </Pressable>
-            ) : null}
-          </Pressable>
-
-          <View style={styles.actions}>
-            <Pressable style={styles.cancelBtn} onPress={onClose}>
-              <AppText variant="bodyMedium" muted>
-                Cancel
-              </AppText>
-            </Pressable>
-            <Pressable
-              style={[styles.confirmBtn, !notes.trim() && styles.confirmDisabled]}
-              onPress={onConfirm}
-              disabled={!notes.trim()}
-            >
-              <AppText variant="bodyMedium" color={colors.white}>
-                Confirm booking
-              </AppText>
-            </Pressable>
+              <Pressable
+                style={[styles.confirmBtn, !notes.trim() && styles.confirmDisabled]}
+                onPress={onConfirm}
+                disabled={!notes.trim()}
+              >
+                <AppText variant="bodyMedium" color={colors.white}>
+                  Confirm booking
+                </AppText>
+              </Pressable>
+            </View>
           </View>
-        </View>
+        </ScrollView>
       </KeyboardAvoidingView>
     </Modal>
   );
@@ -117,12 +130,15 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     backgroundColor: 'rgba(15, 23, 42, 0.5)',
   },
+  scrollContent: {
+    flexGrow: 1,
+    justifyContent: 'flex-end',
+  },
   sheet: {
     backgroundColor: colors.surface,
     borderTopLeftRadius: radius.xl,
     borderTopRightRadius: radius.xl,
     padding: spacing.lg,
-    paddingBottom: spacing.xl,
   },
   title: {
     marginBottom: spacing.xs,

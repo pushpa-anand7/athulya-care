@@ -1,3 +1,4 @@
+// Floating + button on home screen — opens AI assistant menu.
 import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';

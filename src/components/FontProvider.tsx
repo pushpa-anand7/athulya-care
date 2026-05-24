@@ -1,3 +1,4 @@
+// Loads custom fonts before the app shows text.
 import {
   NunitoSans_400Regular,
   NunitoSans_500Medium,

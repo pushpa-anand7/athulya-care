@@ -1,3 +1,4 @@
+// One row for a prescription or lab report file in the Reports tab.
 import { Ionicons } from '@expo/vector-icons';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { AppText } from './AppText';

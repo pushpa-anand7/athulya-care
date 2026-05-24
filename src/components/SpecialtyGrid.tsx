@@ -1,3 +1,4 @@
+// Grid of medical specialties on the book appointment screen.
 import { Ionicons } from '@expo/vector-icons';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { colors, radius, spacing } from '../constants/theme';
